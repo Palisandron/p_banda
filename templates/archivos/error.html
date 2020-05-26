@@ -1,0 +1,20 @@
+{% extends "base/base.html" %}
+{% load static %}
+<title>{% block title %} Error {% endblock %}</title>
+
+{% block header %}
+<br><br>   
+
+<h3>Error</h3>
+<br><br>
+{% endblock %}
+
+
+
+{% block content %}
+<CENTER>
+    <h1 style = 'border: 5px red solid;'> Intentas subir un archivo no válido.</h1>
+    <p> Debe ser uno de estos tipos: JPG,PNG, PDF,MP3,MP4</p>
+</CENTER>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+{% endblock %}

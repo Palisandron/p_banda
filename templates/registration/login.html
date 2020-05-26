@@ -1,0 +1,59 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<title>{% block title %} login {% endblock %}</title>
+
+{% block header %}
+    <h4>Complete los datos, por favor:</h4>  
+{% endblock %}
+
+{% if form.errors %}
+
+<p>Su usuario y/o contraseña no son correctos. Inténtelo de nuevo.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Su cuenta no tiene acceso a esta página.Inicie sesión con una cuenta que tenga acceso</p>
+    {% else %}
+    <p>Inicie sesión para ver esta página.</p>
+    {% endif %}
+{% endif %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-6">
+      
+
+<form  method="post" action="{% url 'login' %}">
+{% crispy form %}
+
+<div>
+  <input type="submit" value="login" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</div>
+
+</form>
+
+{# Asume que configuró la vista de restablecimiento de contraseña en su URLconf #}
+<p><a href="{% url 'password_reset' %}">¿ olvidó la contraseña ?</a></p>
+
+        </div>
+  </div>
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!--all above is necessary for bootstrap to function in this snippet-->
+
+{% endblock %}
+
+
+
+
+

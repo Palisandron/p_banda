@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block header %}
+<h2>Página de inicio</h2>
+{% endblock %}
+
+{% block content %}
+    
+    {% load static %}
+     <center>
+      <img  width="350" height="350" src="{% static 'images/escudo.png' %}" />
+    </center>
+    <br><br>
+      <p> La Banda de la Escuela Municipal de Música “Mariano de las Heras” del Ayuntamiento de Valladolid, está formada por alumnos y profesores de la escuela. Fue  presentada en el mes de diciembre de 2016 con un concierto de Navidad en el auditorio del Centro Cívico José Luis Mosquera. 
+    Desde entonces, ha colaborado en la Semana Santa, acompañando a la Cofradía de la Exaltación de la Cruz y Nuestra Señora de los Dolores en el Vía Crucis del Viernes de Dolores en el barrio de las Delicias, así como en otros eventos sociales y culturales, donde, entre otras actividades, ofreció un concierto en el pregón de inicio de las fiestas del Barrio del Pinar de Antequera de Valladolid en los años 2018 y 2019, ha participado en la Cabalgata de Reyes en Valladolid en los años 2019 y 2020, también ha acompañado a la Patrona de la ciudad, la Virgen de San Lorenzo, en su desfile procesional del 8 de septiembre de 2019,  ha participado en diferentes encuentros con  otras agrupaciones, como el celebrado en el mes de junio de 2017 en la provincia de Ávila o los celebrados en el año 2018, en el mes de febrero en la provincia de Sevilla y en el mes de junio en Valladolid.</p> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <!--all above is necessary for bootstrap to function in this snippet-->  
+ 
+{% endblock %}

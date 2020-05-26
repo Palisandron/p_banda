@@ -1,0 +1,46 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}
+Bandoleros
+{% endblock %}
+
+{% block header %}
+<h4>Página de bandoleros activos, ordenados por instrumento </h4>
+{% endblock %}
+
+{% block content %}
+
+<table class= "table table-striped" >
+    
+    <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellidos</th>
+          <th scope="col">Instrumento</th>
+        </tr>
+      </thead>
+    <tbody>
+
+        {% if bandoleros %}
+        {% for bandolero in bandoleros %}
+        <tr>
+            <td>{{ bandolero.id }}</td>
+            <td>{{ bandolero.nombre }}</td>
+            <td>{{ bandolero.apellidos }}</td>
+            <td>{{ bandolero.instrumento }}</td>
+                        
+        </tr>
+        {% endfor %}
+
+        {% else %}
+             <h2>No hay registros de bandoleros </h2>
+        {% endif %}
+
+    </tbody>
+</table>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!--all above is necessary for bootstrap to function in this snippet-->
+{% endblock%}

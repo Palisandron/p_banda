@@ -1,0 +1,51 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block title %}
+Eventos
+{% endblock %}
+
+{% block header %}
+<h2>Esta es la página de eventos</h2>
+{% endblock %}
+
+{% block content %}
+
+<table class= "table table-striped" >
+    
+    <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Hora</th>
+          <th scope="col">Lugar</th>
+        </tr>
+    </thead>
+   
+    <tbody>
+
+        {% if object_list %}
+          {% for evento in object_list %}
+          <tr>
+            <td>{{ evento.id }}</td>
+            <td>{{ evento.tipo }}</td>
+            <td>{{ evento.fecha_evento }}</td>
+            <td>{{ evento.hora }}</td>
+            <td>{{ evento.lugar }}</td>
+                        
+          </tr>
+          {% endfor %}
+
+        {% else %}
+             <h2>No hay registros de eventos </h2>
+        {% endif %}
+
+    </tbody>
+</table>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <!--all above is necessary for bootstrap to function in this snippet-->
+{% endblock%}
+

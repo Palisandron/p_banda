@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} Contacto {% endblock %}
+
+{% block header %}  {% endblock %}
+
+{% block content%}
+
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-6">
+<h3>Contacta con nosotros</h3>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }} 
+    <div class="form-actions">
+      <button type="submit"  class="btn btn-primary btn-lg">Enviar</button>
+    </div>
+</form>
+       </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!--all above is necessary for bootstrap to function in this snippet-->
+
+{% endblock %}
