@@ -7,6 +7,7 @@ class Bandolero(models.Model):
     # por omisión se crea un campo id autoincremental
     nombre = models.CharField(max_length=30)
     apellidos =  models.CharField(max_length=50)
+    contrasena = models.CharField('contraseña',max_length=18,default=' ')
     instrumento =  models.CharField(max_length=30)
     # estos campos no son obligatorios, admiten blancos y null
     direccion =  models.CharField(max_length=150,blank = True, null = True)
