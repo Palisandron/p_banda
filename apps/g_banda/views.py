@@ -10,7 +10,7 @@ from apps.g_banda.models import Bandolero
 
 def index(request):
     # muestra 'index.html'
-    return render(request,'index.html')
+    return render(request,'index.html',{})
 
 
 def Banda(request):

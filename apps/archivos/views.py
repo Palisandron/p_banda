@@ -6,6 +6,7 @@ from .models import Archivos
 from .forms import Archivo_Form  # para subir Upload
 from django.http import HttpResponseRedirect
 from django.core.files.storage import FileSystemStorage
+from django.contrib.auth.decorators import permission_required, login_required
 import os
 
 
@@ -24,7 +25,7 @@ def Lista_archivos(request):
 FILE_TYPES = ['png', 'jpg', 'jpeg','mp3','pdf','mp4']
 
 
-
+#@login_required
 def borrar_archivo(request,pk):
     # pk primary key Archivos
     if request.method == 'POST':
@@ -39,7 +40,7 @@ def doc_list(request):
     return render(request,'archivos/doc_list.html',{'files':files})
 
 
-
+#@login_required
 def upload(request):
     # segunda versión de subir archivos
     if request.method == 'POST':
@@ -55,6 +56,5 @@ def upload(request):
             return redirect('archivos')
     else:
         form = Archivo_Form()        
-
 
     return render(request,'archivos/upload.html',{'form':form})    
