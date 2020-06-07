@@ -77,6 +77,7 @@ TEMPLATES = [
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'p_banda.wsgi.application'
 
@@ -135,8 +136,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-# Redireccionar a la URL de inicio después de iniciar sesión (Default redirects to /accounts/profile/)
-LOGIN_REDIRECT_URL = '/'
+
 # donde localizar los archivos multimedia, videos , pdf,..
 MEDIA_ROOT ='static/media'
 

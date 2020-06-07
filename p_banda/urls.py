@@ -26,8 +26,8 @@ urlpatterns = [
     path('archivos/',include(('apps.archivos.urls'))),
     path('correo/',include(('apps.g_correo.urls'))),
     #Add Django site authentication urls (for login, logout, password management)
-    path('cuentas/', include('django.contrib.auth.urls')),
-    ] 
+    path('accounts/', include('django.contrib.auth.urls')),
+]
     
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
